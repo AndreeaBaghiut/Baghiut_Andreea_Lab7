@@ -5,32 +5,28 @@
              Title="ListPage">
     <ContentPage.Content xmlns:local="clr-namespace:Baghiut_Andreea_Lab7">
         <StackLayout Margin="20">
-            <Editor Placeholder="Enter the description of the shopping list"
- Text="{Binding Description}"
- HeightRequest="50" >
+            <Editor Placeholder="Enter the description of the shopping list" Text="{Binding Description}" HeightRequest="50" >
             </Editor>
+
+            <Picker x:Name="ShopPicker" Title="Enter Shop Name"/>
+            
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save"
- Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1"
- Text="Delete"
- Clicked="OnDeleteButtonClicked"/>
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
 
             </Grid>
-            <ListView x:Name="listView"
- Margin="20">
+            <ListView x:Name="listView" Margin="20">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Detail="{Binding Description}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300"
-Clicked="OnChooseButtonClicked"/>
+            <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300" Clicked="OnChooseButtonClicked"/>
             <Button Text="Delete Item" Clicked="OnDeleteItemClicked"/>
         </StackLayout>
     </ContentPage.Content>
